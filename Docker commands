@@ -79,7 +79,7 @@ docker run --name <container name> -d -p 8000:8080 <image-name:tag>
 ###################################
 ## Docker volume
 
-docker voluem create <volume name>
+docker volume create <volume name>
 
 docker run -v <host-path:container-path> <image>
 
@@ -90,8 +90,21 @@ docker run -d -p 9000:80 -v c:/Users/Anselme/Documents/Demos/docker/website:/usr
 
 docker exec <cont-ID> -- cat /etc/*release*
 
-docker exec -it nginx bash 
+docker exec -it <name of container> bash 
 
 
+#############################################
 
+Docker network
+##################################################
+
+docker network create <name of network>
+docker run --name <name of container> -d -p 8080:80 --network <name of network> nginx
+
+docker exec -it <name of container> bash 
+
+# Update container: apt update -y
+# install ping: apt install inetutils-ping -y
+
+# ping <ip of other container>
 
