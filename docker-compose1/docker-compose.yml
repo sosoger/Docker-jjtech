@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    ports:
+      - 8080:80
+    container_name: tower-project
+    volumes:
+      - data:/opt
+    networks:
+      - frontier
+
+volumes:
+  data:
+
+networks:
+  frontier:
